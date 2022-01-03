@@ -27,7 +27,7 @@ def get_filters():
         else:
             break
 
-    # get user input for month (all, january, february, march ,april,may, june)        
+    # get user input for month (all, january, february, march ,april,may, june)
     while True:
         month = input("Enter month:").lower()
         if month not in ('all', 'january', 'february', 'march', 'april','may', 'june'):
@@ -64,12 +64,26 @@ def load_data(city, month, day):
     """
 
     df = pd.read_csv(CITY_DATA[city])
+<<<<<<< HEAD
 
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
     df['month'] = df['Start Time'].dt.month
+||||||| dfa9dda
+
+    df['Start Time'] = pd.to_datetime(df['Start Time'])
+
+    df['month'] = df['Start Time'].dt.month
+=======
+>>>>>>> refactoring
 
     df['day_of_week'] = df['Start Time'].dt.day_name()
+
+    df['month'] = df['Start Time'].dt.month
+
+    df['Start Time'] = pd.to_datetime(df['Start Time'])
+
+
 
     if month != 'all':
         months = ['january','february','march','april','may','june']
